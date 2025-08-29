@@ -14,7 +14,7 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "site_player_id")
     private Integer sitePlayerId;
@@ -41,7 +41,7 @@ public class Player {
     @Column(name = "last_scrape")
     private OffsetDateTime lastScrape;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -77,7 +77,7 @@ public class Player {
         return sitePlayerId;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

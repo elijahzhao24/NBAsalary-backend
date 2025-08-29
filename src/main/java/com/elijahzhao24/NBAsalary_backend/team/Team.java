@@ -4,25 +4,28 @@ import com.elijahzhao24.NBAsalary_backend.player.Player;
 import jakarta.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "teams")
 public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private Integer id;
 
     private String code;
 
     private String name;
 
     // Bi-directional mapping
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "teamEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Player> players;
 
     public List<Player> getPlayers() {
         return players;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -38,7 +41,7 @@ public class Team {
         this.code = code;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
