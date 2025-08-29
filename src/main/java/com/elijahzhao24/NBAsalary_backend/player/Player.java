@@ -1,6 +1,7 @@
 package com.elijahzhao24.NBAsalary_backend.player;
 
 import com.elijahzhao24.NBAsalary_backend.team.Team;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.OffsetDateTime;
 
@@ -28,6 +29,7 @@ public class Player {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = false) // names foreign key column in players
+    @JsonIgnore
     private Team teamEntity;
 
     @Column(nullable = false)

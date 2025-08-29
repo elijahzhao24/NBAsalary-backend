@@ -1,6 +1,7 @@
 package com.elijahzhao24.NBAsalary_backend.team;
 
 import com.elijahzhao24.NBAsalary_backend.player.Player;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class Team {
 
     // Bi-directional mapping
     @OneToMany(mappedBy = "teamEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Player> players;
 
     public List<Player> getPlayers() {
