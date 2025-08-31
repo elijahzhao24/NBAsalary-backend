@@ -43,6 +43,17 @@ public class Player {
     @Column(name = "last_scrape")
     private OffsetDateTime lastScrape;
 
+    @Column(name = "headshot_url")
+    private String headshotUrl;
+
+    public String getHeadshotUrl() {
+        return headshotUrl;
+    }
+
+    public void setHeadshotUrl(String headshotUrl) {
+        this.headshotUrl = headshotUrl;
+    }
+
     public Integer getId() {
         return id;
     }
